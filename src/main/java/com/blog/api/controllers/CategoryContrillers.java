@@ -11,6 +11,8 @@ import com.blog.api.payloads.ApiResponse;
 import com.blog.api.payloads.CategoryDto;
 import com.blog.api.services.CategoryService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryContrillers {
@@ -20,7 +22,7 @@ public class CategoryContrillers {
 	
 	//POST - Create
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto){
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto){
 		CategoryDto createdcatDto = this.categoryService.createCategory(categoryDto);
 		
 		return new ResponseEntity<CategoryDto>(createdcatDto,HttpStatus.CREATED);
@@ -29,6 +31,7 @@ public class CategoryContrillers {
 	//PUT - Update
 	@PutMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> updateCategory(
+			@Valid
 			@RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categotyId ){
 		

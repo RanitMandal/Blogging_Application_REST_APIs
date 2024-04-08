@@ -1,5 +1,8 @@
 package com.blog.api.entites;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,5 +23,8 @@ public class Category {
 	
 	@Column(name="description")
 	private String categoryDescription;
+	
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+	private List<Post> posts = new ArrayList<>();
 	
 }
