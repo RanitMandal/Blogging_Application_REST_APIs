@@ -44,8 +44,8 @@ public class UserServiceImp implements UserService{
 		user.setAbout(userDto.getAbout());
 		
 		User updateUser = this.userRepo.save(user);
-		UserDto userDto1 = this.userToUserDto(updateUser);
-		return userDto1;
+		
+		return this.userToUserDto(updateUser);
 	}
 
 	@Override

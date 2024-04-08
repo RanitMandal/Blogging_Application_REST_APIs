@@ -1,5 +1,7 @@
 package com.blog.api.entites;
 
+import com.blog.api.payloads.CategoryDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
