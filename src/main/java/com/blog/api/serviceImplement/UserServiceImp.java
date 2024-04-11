@@ -1,4 +1,4 @@
-package com.blog.api.implementss;
+package com.blog.api.serviceImplement;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,6 +20,7 @@ public class UserServiceImp implements UserService{
 	@Autowired
 	private UserRepo userRepo;
 	
+	
 	@Autowired
 	private ModelMapper modelmapper;
 
@@ -28,7 +29,6 @@ public class UserServiceImp implements UserService{
 
 		User user = this.UserDtoToUser(userDto);
 		User saveUser = this.userRepo.save(user);
-		
 		return this.userToUserDto(saveUser);
 	}
 

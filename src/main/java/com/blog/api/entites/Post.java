@@ -1,13 +1,18 @@
 package com.blog.api.entites;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.blog.api.payloads.CategoryDto;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
 
@@ -22,7 +27,7 @@ import lombok.*;
 public class Post {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer postId;
 	
 	@Column(name="post_title",length=100,nullable=false)
@@ -39,9 +44,8 @@ public class Post {
 	@ManyToOne
 	private User user;
 	
-	
-	
-	
+	@OneToMany(mappedBy="post", cascade= CascadeType.ALL)
+	private Set<Comment> comments = new HashSet<>();	
 	
 
 }
