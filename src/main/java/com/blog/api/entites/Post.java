@@ -20,7 +20,7 @@ import lombok.*;
 
 @Entity
 @Table(name="post")
-//lombork
+//lombork must be install
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
