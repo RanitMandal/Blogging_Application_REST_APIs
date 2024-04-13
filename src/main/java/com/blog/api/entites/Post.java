@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.blog.api.payloads.CategoryDto;
+import com.blog.api.payloads.CommentDto;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
