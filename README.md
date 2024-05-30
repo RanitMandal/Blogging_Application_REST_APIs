@@ -181,7 +181,7 @@ This project is licensed under the License. See the [LICENSE](#) file for detail
 If you have any questions or suggestions, feel free to contact the project maintainer:
 
 - Name: Ranit Mandal
-- Email: ranitmandal17@gmail.com (replace with your actual email)
+- Email: [ranitmandal17@gmail.com](ranitmandal17@gmail.com)
 
 ---
 
